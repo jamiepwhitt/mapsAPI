@@ -24,7 +24,7 @@ public class MapController {
 		model.addAttribute("location", location);
 		return "index";
 	}
-}	
+	
 	
 //	@PostMapping("/random")
 //	public String getMapForRandomLocation( location, Model model) {
@@ -32,3 +32,21 @@ public class MapController {
 //		model.addAttribute("location", location);
 //		return "index";
 //}
+	@PostMapping("/random")
+	public String getRandomMap(Model model) {
+		Location location = mapService.randomCoordinates();
+		model.addAttribute("location", location);
+		return "index";
+	}
+}	
+		
+//		@PostMapping("/random")
+//		public String getRandomCoord(Model model) {
+//			List<Double> coord = new ArrayList<>();
+//			coord = mapService.randomCoordinates();
+//			Location.setLat(coord[0]);
+//			Location.setLng(coord[1]);
+//			mapService.addCoordinates(location);
+//			model.addAttribute(location);
+//			return "index";
+//		}

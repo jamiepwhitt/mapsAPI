@@ -19,9 +19,10 @@
 			        <div class="form-group">
 			      		<input type="text" th:field="*{state}" placeholder="State" class="form-control"/>		        
 			       	</div>
-			       	<!--  <form th:action"@{/random}" method="get" class="form-inlines">
-			       	<button><button class="butn but-md but-primary btn-block" name="Display" value="Submit" type= "Submit">Show a Random Location!</button> </button>
-			        </form> -->	        
+			       	<form th:action="@{/random}" method="post" class="form-inline">
+			    	<button class="btn btn-md btn-primary btn-block" name="Display" value="Submit" type="submit">See a random place in North America!
+			    	</button>
+			    	</form>        
 			        <div class="form-group">
 			           	<button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">Update Map</button>
 			        </div>

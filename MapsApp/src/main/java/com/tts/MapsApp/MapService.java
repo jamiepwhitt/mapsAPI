@@ -1,5 +1,7 @@
 package com.tts.MapsApp;
 
+import java.text.DecimalFormat;
+
 //import java.text.DecimalFormat;
 //import java.util.ArrayList;
 //import java.util.List;
@@ -42,6 +44,28 @@ public class MapService {
 //		    return randomLocation;
 //		
 //	}
+	
+	public Location randomCoordinates() {
+		double minLat = 30.00;
+	    double maxLat = 70.00;
+	    double latitude = minLat + (double)(Math.random() * ((maxLat - minLat) + 1));
+	    double minLon = -70.00;
+	    double maxLon = -130.00;
+	    double longitude = minLon + (double)(Math.random() * ((maxLon - minLon) + 1));
+	    DecimalFormat df = new DecimalFormat("#.#####");
+	    String randlat = String.valueOf(latitude);
+	    String randlng = String.valueOf(longitude);
+//	    String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + randlat + "," + randlng + "&key=" + apiKey;
+//	    RestTemplate restTemplate = new RestTemplate();		
+//	    GeocodingResponse response = restTemplate.getForObject(url,  GeocodingResponse.class);
+//	    Address_components address = response.getResults().get(0).getAddress_components();
+	    Location randomLocation = new Location();
+//	    randomLocation.setCity(response.getResults().get(0).getAddress_components().get(3).getLong_name());
+//	    randomLocation.setState(response.getResults().get(0).getAddress_components().get(5).getShort_name());
+	    randomLocation.setLat(randlat);
+	    randomLocation.setLng(randlng);
+	    return randomLocation;
+	}
 	
 	
 }
